@@ -1,0 +1,37 @@
+{
+  "name": "uksai-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build",
+    "github:sync": "node scripts/github-sync.mjs",
+    "vercel:deploy": "node scripts/vercel-deploy.mjs",
+    "facebook:broadcast": "node scripts/facebook-broadcast.mjs",
+    "integrations:test": "node scripts/test-integrations.mjs"
+  },
+  "dependencies": {
+    "firebase": "^12.3.0",
+    "firebase-admin": "^13.5.0",
+    "next": "15.5.18",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "15.5.18",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
