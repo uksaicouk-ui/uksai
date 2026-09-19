@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "UKSAI Platform"
+description = "The mother portal and technology hub for the UK School of Artificial Intelligence Ltd, connecting its education, media, investigation, and public-interest initiatives in one trusted digital home."
+version = "1.0.0"
+id = "artifacts/uksai-platform"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24317
+
+[services.development]
+run = "pnpm --filter @workspace/uksai-platform run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/uksai-platform", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/uksai-platform/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24317"
+BASE_PATH = "/"
