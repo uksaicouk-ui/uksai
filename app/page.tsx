@@ -1,3 +1,5 @@
+'use client'
+
 import { useMemo, useState, type FormEvent } from 'react'
 import { ArrowDownRight, ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Menu, Send, X } from 'lucide-react'
 
